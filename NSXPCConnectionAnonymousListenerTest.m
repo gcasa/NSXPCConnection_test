@@ -41,7 +41,7 @@
 static int RunNSXPCConnectionTest(void) {
     __block NSString *response = nil;
     __block NSError *proxyError = nil;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    __block BOOL completed = NO;
 
     XPCListenerDelegate *delegate = [XPCListenerDelegate new];
     NSXPCListener *listener = [NSXPCListener anonymousListener];
@@ -54,18 +54,24 @@ static int RunNSXPCConnectionTest(void) {
 
     id<XPCEchoing> proxy = [connection remoteObjectProxyWithErrorHandler:^(NSError *error) {
         proxyError = error;
-        dispatch_semaphore_signal(semaphore);
+        completed = YES;
     }];
 
     [proxy uppercaseString:@"hello from objc" withReply:^(NSString *result) {
         response = result;
-        dispatch_semaphore_signal(semaphore);
+        completed = YES;
     }];
 
-    long waitResult = dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC));
+    NSDate *deadline = [NSDate dateWithTimeIntervalSinceNow:5.0];
+    while (!completed && [deadline timeIntervalSinceNow] > 0.0) {
+        @autoreleasepool {
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:0.01]];
+        }
+    }
+
     [connection invalidate];
 
-    if (waitResult != 0) {
+    if (!completed) {
         fprintf(stderr, "Timed out waiting for NSXPCConnection reply.\n");
         return 1;
     }

@@ -9,11 +9,11 @@ relocations:
   - { offset: 0x190, size: 0x8, addend: 0x0, symName: '-[XPCListenerDelegate service]', symObjAddr: 0x170, symBinAddr: 0x100000D58, symSize: 0x8 }
   - { offset: 0x1C4, size: 0x8, addend: 0x0, symName: '-[XPCListenerDelegate setService:]', symObjAddr: 0x178, symBinAddr: 0x100000D60, symSize: 0xC }
   - { offset: 0x201, size: 0x8, addend: 0x0, symName: '-[XPCListenerDelegate .cxx_destruct]', symObjAddr: 0x184, symBinAddr: 0x100000D6C, symSize: 0xC }
-  - { offset: 0x5EA, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x190, symBinAddr: 0x100000D78, symSize: 0x3BC }
-  - { offset: 0x974, size: 0x8, addend: 0x0, symName: ___Block_byref_object_copy_, symObjAddr: 0x54C, symBinAddr: 0x100001134, symSize: 0x10 }
-  - { offset: 0x996, size: 0x8, addend: 0x0, symName: ___Block_byref_object_dispose_, symObjAddr: 0x55C, symBinAddr: 0x100001144, symSize: 0x8 }
-  - { offset: 0x9B3, size: 0x8, addend: 0x0, symName: ___RunNSXPCConnectionTest_block_invoke, symObjAddr: 0x564, symBinAddr: 0x10000114C, symSize: 0x48 }
-  - { offset: 0xA27, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32s40r, symObjAddr: 0x5AC, symBinAddr: 0x100001194, symSize: 0x34 }
-  - { offset: 0xA4D, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32s40r, symObjAddr: 0x5E0, symBinAddr: 0x1000011C8, symSize: 0x2C }
-  - { offset: 0xA6A, size: 0x8, addend: 0x0, symName: ___RunNSXPCConnectionTest_block_invoke.66, symObjAddr: 0x60C, symBinAddr: 0x1000011F4, symSize: 0x48 }
+  - { offset: 0x620, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x190, symBinAddr: 0x100000D78, symSize: 0x450 }
+  - { offset: 0x8FA, size: 0x8, addend: 0x0, symName: ___Block_byref_object_copy_, symObjAddr: 0x5E0, symBinAddr: 0x1000011C8, symSize: 0x10 }
+  - { offset: 0x91C, size: 0x8, addend: 0x0, symName: ___Block_byref_object_dispose_, symObjAddr: 0x5F0, symBinAddr: 0x1000011D8, symSize: 0x8 }
+  - { offset: 0x939, size: 0x8, addend: 0x0, symName: ___RunNSXPCConnectionTest_block_invoke, symObjAddr: 0x5F8, symBinAddr: 0x1000011E0, symSize: 0x48 }
+  - { offset: 0x98F, size: 0x8, addend: 0x0, symName: ___copy_helper_block_e8_32r40r, symObjAddr: 0x640, symBinAddr: 0x100001228, symSize: 0x3C }
+  - { offset: 0x9B5, size: 0x8, addend: 0x0, symName: ___destroy_helper_block_e8_32r40r, symObjAddr: 0x67C, symBinAddr: 0x100001264, symSize: 0x30 }
+  - { offset: 0x9D2, size: 0x8, addend: 0x0, symName: ___RunNSXPCConnectionTest_block_invoke.66, symObjAddr: 0x6AC, symBinAddr: 0x100001294, symSize: 0x48 }
 ...

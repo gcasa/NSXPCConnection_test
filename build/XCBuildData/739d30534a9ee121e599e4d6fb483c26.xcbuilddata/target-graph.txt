@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'NSXPCConnectionAnonymousListenerTest' in project 'NSXPCConnectionAnonymousListenerTest' (no dependencies)
